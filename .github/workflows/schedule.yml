@@ -29,5 +29,5 @@ jobs:
      - name: Install Newman
        run: |
         npm install -g newman
-          echo Add other actions to build,
+        npm install -g newman-reporter-htmlextra
           
