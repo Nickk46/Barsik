@@ -34,7 +34,13 @@ jobs:
         
      - name: Test run
        run: |
-           newman run Trello_Nikolay.postman_collection.json -e TrelloUAT.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export report.html 
+           newman run Trello_Nikolay.postman_collection.json -e TrelloUAT.postman_environment.json
+           -r cli,htmlextra --reporter-htmlextra-export newman_report.html 
         
+     - name: Upload report
+       uses: actions/upload-artifact@v3
+       with:
+        name: Testrun html report
+        path: newman_report.html 
             
           
