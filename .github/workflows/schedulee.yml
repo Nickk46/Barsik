@@ -38,9 +38,11 @@ jobs:
            -r cli,htmlextra --reporter-htmlextra-export newman_report.html 
         
      - name: Upload report
+       if: always()
        uses: actions/upload-artifact@v3
        with:
         name: Testrun html report
         path: newman_report.html 
+    
             
           
